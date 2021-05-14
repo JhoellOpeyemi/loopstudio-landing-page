@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+@import 'config';
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-alata;
+
+	&.noscroll {
+		overflow-y: hidden;
+	}
+}
+
+h1,
+h2,
+h3 {
+	font-family: $font-josefin-sans;
+	font-weight: $font-weight-300;
+	text-transform: uppercase;
+	line-height: 1.2;
+}
+
+p {
+	line-height: 1.65;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	width: 89%;
+	max-width: 1120px;
+	margin: 0 auto;
+}
+
+.flex {
+	display: flex;
+}
+
+.grid {
+	display: grid;
+}
+
+// Header
+header {
+	background: $hero-mobile;
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transition: all $transition-delay;
+	padding-bottom: 12rem;
+
+	&.open {
+		background: $black;
+	}
+
+	nav {
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 2rem;
+
+		.logo-container {
+			img {
+				width: 80%;
+			}
+		}
+
+		ul.nav-links {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+			position: absolute;
+			padding: 1rem 0 0 1.5rem;
+			top: 5rem;
+			left: 0;
+			width: 100%;
+			min-height: 90vh;
+			background: $black;
+			list-style: none;
+			clip-path: circle(100px at 85% -30%);
+			-webkit-clip-path: circle(100px at 95% -30%);
+			transition: all $transition-delay;
+			pointer-events: none;
+
+			&.open {
+				overflow-y: scroll;
+				clip-path: circle(1200px at 95% -30%);
+				-webkit-clip-path: circle(1200px at 95% -30%);
+				pointer-events: all;
+			}
+
+			li {
+				margin-bottom: 3rem;
+
+				a {
+					font-family: $font-josefin-sans;
+					font-size: 2rem;
+					font-weight: $font-weight-300;
+					color: $white;
+					text-transform: uppercase;
+				}
+			}
+		}
+
+		.hamburger {
+			cursor: pointer;
+			transition: all $transition-delay;
+
+			&.open {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	.intro-header {
+		margin-top: 10rem;
+		border: 2px solid $white;
+		padding: 1.2rem;
+
+		h1 {
+			color: $white;
+			font-size: 2.3rem;
+		}
+	}
+}
+
+// Main
+main {
+	margin: 6.5rem 0;
+	transition: all $transition-delay;
+
+	.grid {
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(2, 1fr);
+		gap: 3rem 0;
+
+		.img-container {
+			background: $interactive-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 100%;
+			transition: all $transition-delay;
+		}
+
+		.main-details {
+			text-align: center;
+
+			h2 {
+				font-size: 2rem;
+			}
+
+			p {
+				color: $dark-gray;
+				padding-top: 1.3rem;
+			}
+		}
+	}
+}
+
+// Creations Section
+.creations {
+	margin-bottom: 4rem;
+
+	.grid {
+		grid-template-columns: 100%;
+		grid-template-rows: 1fr;
+		grid-template-areas: 'heading' 'deep-earth' 'night-arcade' 'soccer-team' 'the-grid' 'from-above' 'pocket-borealis' 'curiosity' 'fisheye' 'button';
+		gap: 1.5rem 0;
+
+		.grid-item {
+			width: 100%;
+			height: 9rem;
+			transition: all $transition-delay;
+			cursor: pointer;
+
+			&:hover,
+			&:focus {
+				h3 {
+					background-color: rgba($color: #f2efe8, $alpha: 0.8);
+					color: $black;
+				}
+			}
+
+			h3 {
+				display: flex;
+				align-items: flex-end;
+				background-color: rgba($color: #000000, $alpha: 0.1);
+				color: $white;
+				height: 100%;
+				font-size: 1.45rem;
+				padding: 0 0 1.4rem 1.4rem;
+				transition: all $transition-delay;
+			}
+		}
+
+		.creations-header {
+			grid-area: heading;
+			text-align: center;
+			padding-bottom: 2rem;
+
+			h2 {
+				font-size: 2rem;
+			}
+		}
+
+		.creations-btn {
+			grid-area: button;
+			background: none;
+			width: 45%;
+			font-family: $font-alata;
+			margin: 0.6rem auto;
+			padding: 0.6rem 0;
+			border: 1px solid #000;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all $transition-delay;
+
+			&:focus,
+			&:hover {
+				background: $black;
+				color: $white;
+			}
+		}
+
+		.deep-earth {
+			grid-area: deep-earth;
+			background-image: $deep-earth-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.night-arcade {
+			grid-area: night-arcade;
+			background: $night-arcade-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.soccer-team {
+			grid-area: soccer-team;
+			background: $soccer-team-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.the-grid {
+			grid-area: the-grid;
+			background: $grid-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.from-above {
+			grid-area: from-above;
+			background: $from-above-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.pocket-borealis {
+			grid-area: pocket-borealis;
+			background: $pocket-borealis-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.curiosity {
+			grid-area: curiosity;
+			background: $curiosity-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+
+		.fisheye {
+			grid-area: fisheye;
+			background: $fish-eye-mobile;
+			background-position: top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+			background-blend-mode: multiply;
+		}
+	}
+}
+
+footer {
+	background: $black;
+	padding: 3.5rem 0;
+
+	a {
+		border-bottom: 2px solid transparent;
+	}
+
+	a:hover,
+	a:focus {
+		border-bottom: 2px solid $white;
+	}
+
+	.flex {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		.footer-links {
+			.logo-container {
+				img {
+					width: 70%;
+				}
+			}
+
+			.links {
+				flex-direction: column;
+				margin: 2rem 0;
+
+				a {
+					color: $white;
+					padding-bottom: 0.5rem;
+
+					&:not(:last-child) {
+						margin-bottom: 2rem;
+					}
+				}
+			}
+		}
+
+		.socials {
+			.socials-links {
+				a {
+					margin: 0 0.8rem;
+				}
+			}
+
+			.copyright {
+				margin-top: 1.8rem;
+
+				p {
+					font-size: 0.8rem;
+					color: $dark-gray;
+				}
+			}
+		}
+	}
+}
+
+.attribution {
+	p {
+		font-size: 0.8rem;
+		text-align: center;
+
+		a {
+			color: hsl(228, 45%, 44%);
+		}
+	}
+}
+
+// Animations
