@@ -1,0 +1,80 @@
+@media screen and (min-width: 499px) {
+	header {
+		padding-bottom: 15rem;
+
+		nav {
+			padding-top: 2.5625rem;
+
+			.logo-container {
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		.intro-header {
+			margin-top: 12.9375rem;
+
+			h1 {
+				font-size: 3.125rem;
+			}
+		}
+	}
+
+	main {
+		margin: 7.5625rem 0;
+
+		.grid {
+			grid-template-columns: 100%;
+			grid-template-rows: 2.2fr 1fr;
+			gap: 3rem 0;
+
+			.main-details {
+				h2 {
+					font-size: 2.5625rem;
+				}
+
+				p {
+					font-size: 1.05rem;
+					padding-top: 2rem;
+				}
+			}
+		}
+	}
+
+	.creations {
+		margin-bottom: 4rem;
+
+		.grid {
+			gap: 1.8125rem 0;
+
+			.grid-item {
+				height: 10rem;
+
+				h3 {
+					font-size: 2rem;
+					padding: 0 0 1.5625rem 1.5625rem;
+					transition: all $transition-delay;
+				}
+			}
+
+			.creations-header {
+				grid-area: heading;
+				text-align: center;
+				padding-bottom: 4rem;
+
+				h2 {
+					font-size: 2.5625rem;
+				}
+			}
+
+			.creations-btn {
+				grid-area: button;
+				width: 40%;
+				font-size: 1.1rem;
+				margin: 1rem auto;
+				padding: 1rem 0;
+			}
+		}
+	}
+}

@@ -59,7 +59,8 @@ header {
 	padding-bottom: 12rem;
 
 	&.open {
-		background: $black;
+		background-color: $black;
+		background-blend-mode: multiply;
 	}
 
 	nav {
@@ -92,7 +93,6 @@ header {
 			pointer-events: none;
 
 			&.open {
-				overflow-y: scroll;
 				clip-path: circle(1200px at 95% -30%);
 				-webkit-clip-path: circle(1200px at 95% -30%);
 				pointer-events: all;
@@ -125,10 +125,11 @@ header {
 		margin-top: 10rem;
 		border: 2px solid $white;
 		padding: 1.2rem;
+		max-width: 41.0625rem;
 
 		h1 {
 			color: $white;
-			font-size: 2.3rem;
+			font-size: 2.4rem;
 		}
 	}
 }
@@ -387,3 +388,5 @@ footer {
 }
 
 // Animations
+
+@import 'media';
