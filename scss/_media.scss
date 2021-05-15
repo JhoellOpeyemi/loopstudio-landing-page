@@ -16,7 +16,7 @@
 			margin-top: 12.9375rem;
 
 			h1 {
-				font-size: 3.125rem;
+				font-size: 3.7rem;
 			}
 		}
 	}
@@ -26,17 +26,18 @@
 
 		.grid {
 			grid-template-columns: 100%;
-			grid-template-rows: 2.2fr 1fr;
+			grid-template-rows: 1.8fr 1fr;
 			gap: 3rem 0;
 
 			.main-details {
+				padding: 2rem 2rem 0 2rem;
+
 				h2 {
 					font-size: 2.5625rem;
 				}
 
 				p {
 					font-size: 1.05rem;
-					padding-top: 2rem;
 				}
 			}
 		}
@@ -49,7 +50,7 @@
 			gap: 1.8125rem 0;
 
 			.grid-item {
-				height: 10rem;
+				height: 11rem;
 
 				h3 {
 					font-size: 2rem;
@@ -74,6 +75,206 @@
 				font-size: 1.1rem;
 				margin: 1rem auto;
 				padding: 1rem 0;
+			}
+		}
+	}
+
+	footer {
+		padding: 4.5rem 0;
+
+		.flex {
+			.footer-links {
+				.logo-container {
+					img {
+						width: 100%;
+					}
+				}
+
+				.links {
+					margin: 3rem 0;
+
+					a {
+						font-size: 1.4rem;
+
+						&:not(:last-child) {
+							margin-bottom: 2.25rem;
+						}
+					}
+				}
+			}
+
+			.socials {
+				.socials-links {
+					a {
+						margin: 0 1.3125rem;
+					}
+				}
+
+				.copyright {
+					margin-top: 2rem;
+
+					p {
+						font-size: 1.1rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 700px) {
+	header {
+		background: $hero-desktop;
+		background-position: top;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-color: rgba($color: #000000, $alpha: 0.5);
+		background-blend-mode: multiply;
+		transition: all $transition-delay;
+		padding-bottom: 9.0625rem;
+
+		&.open {
+			background-color: $black;
+			background-blend-mode: multiply;
+		}
+
+		nav {
+			padding-top: 3.9375rem;
+
+			.logo-container {
+				img {
+					width: 100%;
+				}
+			}
+
+			ul.nav-links {
+				padding: 1rem 0 0 3rem;
+				top: 6.5rem;
+
+				&.open {
+					overflow-y: scroll;
+				}
+
+				li {
+					margin-bottom: 2.5rem;
+
+					a {
+						font-size: 2.3rem;
+					}
+				}
+			}
+
+			.hamburger {
+				img {
+					width: 2.1rem;
+				}
+			}
+		}
+
+		.intro-header {
+			margin-top: 8.375rem;
+			border: 2px solid $white;
+			padding: 2.6875rem 0 2.6875rem 3rem;
+
+			h1 {
+				font-size: 4.5rem;
+			}
+		}
+	}
+
+	main {
+		margin: 10rem 0;
+		transition: all $transition-delay;
+
+		.grid {
+			grid-template-rows: 2fr 1fr;
+
+			.main-details {
+				h2 {
+					font-size: 3rem;
+				}
+
+				p {
+					font-size: 1.3rem;
+				}
+			}
+		}
+	}
+
+	.creations {
+		margin-bottom: 11.4375rem;
+
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr;
+			grid-template-areas: 'heading button' 'deep-earth night-arcade' 'soccer-team the-grid' 'from-above pocket-borealis' 'curiosity fisheye';
+			gap: 1.75rem;
+
+			.grid-item {
+				height: 27.875rem;
+
+				h3 {
+					padding: 0 0 2.4375rem 2.625rem;
+				}
+			}
+
+			.creations-header {
+				grid-area: heading;
+				text-align: left;
+				padding-bottom: 5.25rem;
+
+				h2 {
+					font-size: 2.2rem;
+				}
+			}
+
+			.creations-btn {
+				grid-area: button;
+				place-self: end;
+				width: 50%;
+				height: 2.8rem;
+				margin: 0 0 5.25rem 0;
+				padding: 0.6rem 0;
+			}
+
+			.deep-earth {
+				grid-area: deep-earth;
+				background-image: $deep-earth-desktop;
+			}
+
+			.night-arcade {
+				grid-area: night-arcade;
+				background-image: $night-arcade-desktop;
+			}
+
+			.soccer-team {
+				grid-area: soccer-team;
+				background-image: $soccer-team-desktop;
+			}
+
+			.the-grid {
+				grid-area: the-grid;
+				background-image: $grid-desktop;
+			}
+
+			.from-above {
+				grid-area: from-above;
+				background-image: $from-above-desktop;
+			}
+
+			.pocket-borealis {
+				grid-area: pocket-borealis;
+				background-image: $pocket-borealis-desktop;
+			}
+
+			.curiosity {
+				grid-area: curiosity;
+				background-image: $curiosity-desktop;
+			}
+
+			.fisheye {
+				grid-area: fisheye;
+				background-image: $fish-eye-desktop;
 			}
 		}
 	}
