@@ -49,6 +49,62 @@ a {
 	display: grid;
 }
 
+// Pre-loader
+.pre-loader {
+	position: fixed;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: #bf64cb;
+	transition: all $transition-delay ease;
+
+	&-finish {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	img {
+		width: 20%;
+		transform: scale(1);
+		animation: image-opacity 2s ease-in-out infinite;
+	}
+
+	.spinner {
+		position: absolute;
+		width: 10rem;
+		height: 10rem;
+		border: 5px solid transparent;
+		border-radius: 50%;
+		mix-blend-mode: overlay;
+
+		&-green {
+			border-top: 5px solid lightgreen;
+			animation: rotate 3s ease infinite;
+		}
+
+		&-blue {
+			border-top: 5px solid lightblue;
+			animation: rotate 2s ease-in infinite;
+		}
+
+		&-red {
+			border-top: 5px solid lightcoral;
+			animation: rotate 2.5s linear infinite;
+		}
+	}
+
+	&-text {
+		position: absolute;
+		top: 80%;
+		font-size: 1.3rem;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+	}
+}
+
 // Header
 header {
 	background: $hero-mobile;
@@ -129,7 +185,7 @@ header {
 
 				a {
 					font-family: $font-josefin-sans;
-					font-size: 2rem;
+					font-size: 1.5rem;
 					font-weight: $font-weight-300;
 					color: $white;
 					text-transform: uppercase;
@@ -155,7 +211,7 @@ header {
 
 		h1 {
 			color: $white;
-			font-size: 2.4rem;
+			font-size: 2.2rem;
 		}
 	}
 }
@@ -343,6 +399,7 @@ main {
 	}
 }
 
+// FOoter
 footer {
 	background: $black;
 	padding: 3.5rem 0;

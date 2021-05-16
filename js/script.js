@@ -1,11 +1,19 @@
+window.addEventListener('load', () => {
+	const preLoader = document.querySelector('.pre-loader');
+	preLoader.classList.add('pre-loader-finish');
+	body.classList.remove('noscroll');
+});
+
 const body = document.querySelector('body');
 const header = document.querySelector('header');
 const mobileNav = document.querySelector('.nav-links');
 const hamburger = document.querySelector('.hamburger');
 const hamburgerImg = document.querySelector('.hamburger img');
 
+// Events Listeners
 hamburger.addEventListener('click', openNav);
 
+// Functions
 function openNav() {
 	mobileNav.classList.toggle('open');
 	header.classList.toggle('open');

@@ -1,4 +1,31 @@
 @media screen and (min-width: 499px) {
+	.pre-loader {
+		img {
+			width: 11%;
+		}
+
+		.spinner {
+			position: absolute;
+			width: 12.5rem;
+			height: 12.5rem;
+
+			&-green {
+				border-top: 5px solid lightgreen;
+				animation: rotate 3s ease infinite;
+			}
+
+			&-blue {
+				border-top: 5px solid lightblue;
+				animation: rotate 2s ease-in infinite;
+			}
+
+			&-red {
+				border-top: 5px solid lightcoral;
+				animation: rotate 2.5s linear infinite;
+			}
+		}
+	}
+
 	header {
 		padding-bottom: 15rem;
 
@@ -193,7 +220,7 @@
 		.intro-header {
 			margin-top: 8.375rem;
 			border: 2px solid $white;
-			padding: 2.9375rem 0 2.9375rem 2.9375rem;
+			padding: 2.8rem 0 2.8rem 2.8rem;
 
 			h1 {
 				line-height: 1;
@@ -301,6 +328,41 @@
 }
 
 @media screen and (min-width: 988px) {
+	.pre-loader {
+		img {
+			width: 8%;
+		}
+
+		.spinner {
+			position: absolute;
+			width: 14rem;
+			height: 14rem;
+
+			&-green {
+				border-top: 5px solid lightgreen;
+				animation: rotate 3s ease infinite;
+			}
+
+			&-blue {
+				border-top: 5px solid lightblue;
+				animation: rotate 2s ease-in infinite;
+			}
+
+			&-red {
+				border-top: 5px solid lightcoral;
+				animation: rotate 2.5s linear infinite;
+			}
+		}
+
+		&-text {
+			position: absolute;
+			top: 75%;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			letter-spacing: 6px;
+		}
+	}
+
 	main {
 		.grid {
 			grid-template-columns: 60% 40%;

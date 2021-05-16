@@ -36,46 +36,45 @@ $night-arcade-mobile: url(../images/mobile/image-night-arcade.jpg);
 $pocket-borealis-mobile: url(../images/mobile/image-pocket-borealis.jpg);
 $soccer-team-mobile: url(../images/mobile/image-soccer-team.jpg);
 
-// Animations
+// ANIMATIONS
+
+// Mobile Nav
 @keyframes mobileNav {
 	0% {
 		opacity: 0;
 		transform: translateX(500%);
 	}
-
 	50% {
 		opacity: 1;
 	}
-
 	80% {
 		transform: translateX(-15%);
 		opacity: 1;
 	}
-
 	100% {
 		opacity: 1;
 		transform: translateX(0);
 	}
 }
 
-@media (prefers-reduced-motion: reduce) {
-	header {
-		nav {
-			ul.nav-links {
-				&.open {
-					li {
-						opacity: 1;
-						pointer-events: all;
-						animation: none;
-					}
-				}
+// Preloader Spinner
+@keyframes rotate {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
 
-				li {
-					animation: none;
-					opacity: 0;
-					pointer-events: none;
-				}
-			}
-		}
+// Preloader Image
+@keyframes image-opacity {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.1);
 	}
 }
