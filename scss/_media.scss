@@ -122,7 +122,7 @@
 	}
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 740px) {
 	header {
 		background: $hero-desktop;
 		background-position: top;
@@ -132,11 +132,6 @@
 		background-blend-mode: multiply;
 		transition: all $transition-delay;
 		padding-bottom: 9.0625rem;
-
-		&.open {
-			background-color: $black;
-			background-blend-mode: multiply;
-		}
 
 		nav {
 			padding-top: 3.9375rem;
@@ -148,35 +143,60 @@
 			}
 
 			ul.nav-links {
-				padding: 1rem 0 0 3rem;
-				top: 6.5rem;
-
-				&.open {
-					overflow-y: scroll;
-				}
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-end;
+				position: static;
+				padding: 0;
+				top: 0;
+				left: 0;
+				width: 100%;
+				min-height: 100%;
+				background: none;
+				list-style: none;
+				clip-path: none;
+				-webkit-clip-path: none;
+				transition: all $transition-delay;
+				pointer-events: all;
 
 				li {
-					margin-bottom: 2.5rem;
+					margin-bottom: 0;
+					opacity: 1;
+					pointer-events: all;
+
+					&:not(:last-child) {
+						margin-right: 2rem;
+					}
 
 					a {
-						font-size: 2.3rem;
+						opacity: 1;
+						text-transform: capitalize;
+						font-size: 1.1rem;
+						padding-bottom: 0.4rem;
+						border-bottom: 2px solid transparent;
+						transition: all $transition-delay;
+
+						&:hover,
+						&:focus {
+							border-bottom: 2px solid $white;
+						}
 					}
 				}
 			}
 
 			.hamburger {
-				img {
-					width: 2.1rem;
-				}
+				display: none;
 			}
 		}
 
 		.intro-header {
 			margin-top: 8.375rem;
 			border: 2px solid $white;
-			padding: 2.6875rem 0 2.6875rem 3rem;
+			padding: 2.9375rem 0 2.9375rem 2.9375rem;
 
 			h1 {
+				line-height: 1;
 				font-size: 4.5rem;
 			}
 		}
@@ -275,6 +295,178 @@
 			.fisheye {
 				grid-area: fisheye;
 				background-image: $fish-eye-desktop;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 988px) {
+	main {
+		.grid {
+			grid-template-columns: 60% 40%;
+			grid-template-rows: 1fr;
+			gap: 0;
+
+			.img-container {
+				background: $interactive-desktop;
+				background-position: top;
+				background-repeat: no-repeat;
+				background-size: cover;
+				width: 110%;
+				height: 100%;
+				transition: all $transition-delay;
+			}
+
+			.main-details {
+				position: relative;
+				left: -15%;
+				background: $white;
+				text-align: left;
+				width: 110%;
+				margin-top: 11.75rem;
+				padding: 6rem 0 2rem 6rem;
+
+				h2 {
+					font-size: 3rem;
+				}
+
+				p {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+
+	.creations {
+		margin-bottom: 11.4375rem;
+
+		.grid {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 1fr;
+			grid-template-areas: 'heading heading . button' 'deep-earth night-arcade soccer-team the-grid' 'from-above pocket-borealis curiosity fisheye';
+			gap: 1.5rem;
+
+			.grid-item {
+				height: 27.875rem;
+
+				h3 {
+					padding: 0 0 2rem 1.4rem;
+				}
+			}
+
+			.creations-header {
+				grid-area: heading;
+
+				h2 {
+					font-size: 3rem;
+				}
+			}
+
+			.creations-btn {
+				grid-area: button;
+				place-self: end;
+				width: 65%;
+				height: 2.8rem;
+				margin: 0 0 5.25rem 0;
+				padding: 0.6rem 0;
+			}
+
+			.deep-earth {
+				grid-area: deep-earth;
+				background-image: $deep-earth-desktop;
+			}
+
+			.night-arcade {
+				grid-area: night-arcade;
+				background-image: $night-arcade-desktop;
+			}
+
+			.soccer-team {
+				grid-area: soccer-team;
+				background-image: $soccer-team-desktop;
+			}
+
+			.the-grid {
+				grid-area: the-grid;
+				background-image: $grid-desktop;
+			}
+
+			.from-above {
+				grid-area: from-above;
+				background-image: $from-above-desktop;
+			}
+
+			.pocket-borealis {
+				grid-area: pocket-borealis;
+				background-image: $pocket-borealis-desktop;
+			}
+
+			.curiosity {
+				grid-area: curiosity;
+				background-image: $curiosity-desktop;
+			}
+
+			.fisheye {
+				grid-area: fisheye;
+				background-image: $fish-eye-desktop;
+			}
+		}
+	}
+
+	footer {
+		padding: 2.625rem 0;
+
+		.flex {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			.footer-links {
+				.logo-container {
+					margin-bottom: 1.8125rem;
+					text-align: left;
+
+					img {
+						width: 40%;
+					}
+				}
+
+				.links {
+					flex-direction: row;
+					margin: 0;
+
+					a {
+						&:not(:last-child) {
+							margin-bottom: 0;
+						}
+
+						&:not(:first-child) {
+							margin-left: 2.0625rem;
+						}
+					}
+				}
+			}
+
+			.socials {
+				.socials-links {
+					text-align: right;
+
+					a {
+						margin: 0;
+
+						&:not(:last-child) {
+							margin-right: 1rem;
+						}
+					}
+				}
+
+				.copyright {
+					margin-top: 1.8rem;
+
+					p {
+						font-size: 1rem;
+					}
+				}
 			}
 		}
 	}

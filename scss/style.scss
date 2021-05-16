@@ -37,7 +37,7 @@ a {
 
 .container {
 	width: 89%;
-	max-width: 1120px;
+	max-width: 11100px;
 	margin: 0 auto;
 }
 
@@ -93,13 +93,39 @@ header {
 			pointer-events: none;
 
 			&.open {
-				clip-path: circle(1200px at 95% -30%);
-				-webkit-clip-path: circle(1200px at 95% -30%);
+				clip-path: circle(1400px at 95% -30%);
+				-webkit-clip-path: circle(1400px at 95% -30%);
 				pointer-events: all;
+
+				li {
+					pointer-events: all;
+
+					&:first-child {
+						animation: mobileNav $transition-delay $transition-delay forwards;
+					}
+
+					&:nth-child(2) {
+						animation: mobileNav $transition-delay 650ms forwards;
+					}
+
+					&:nth-child(3) {
+						animation: mobileNav $transition-delay 800ms forwards;
+					}
+
+					&:nth-child(4) {
+						animation: mobileNav $transition-delay 950ms forwards;
+					}
+
+					&:last-child {
+						animation: mobileNav $transition-delay 1100ms forwards;
+					}
+				}
 			}
 
 			li {
 				margin-bottom: 3rem;
+				opacity: 0;
+				pointer-events: none;
 
 				a {
 					font-family: $font-josefin-sans;
@@ -125,7 +151,7 @@ header {
 		margin-top: 10rem;
 		border: 2px solid $white;
 		padding: 1.2rem;
-		max-width: 41.0625rem;
+		max-width: 42rem;
 
 		h1 {
 			color: $white;
@@ -323,11 +349,11 @@ footer {
 
 	a {
 		border-bottom: 2px solid transparent;
-	}
 
-	a:hover,
-	a:focus {
-		border-bottom: 2px solid $white;
+		&:hover,
+		&:focus {
+			border-bottom: 2px solid $white;
+		}
 	}
 
 	.flex {
@@ -348,7 +374,9 @@ footer {
 
 				a {
 					color: $white;
-					padding-bottom: 0.5rem;
+					padding-bottom: 0.4rem;
+					font-family: $font-josefin-sans;
+					font-weight: $font-weight-300;
 
 					&:not(:last-child) {
 						margin-bottom: 2rem;
@@ -369,7 +397,7 @@ footer {
 
 				p {
 					font-size: 0.8rem;
-					color: $dark-gray;
+					color: $very-dark-gray;
 				}
 			}
 		}
@@ -378,7 +406,7 @@ footer {
 
 .attribution {
 	p {
-		font-size: 0.8rem;
+		font-size: 1rem;
 		text-align: center;
 
 		a {
