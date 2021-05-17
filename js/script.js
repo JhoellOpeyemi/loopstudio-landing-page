@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 
 const body = document.querySelector('body');
 const header = document.querySelector('header');
-const mobileNav = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav-links');
 const hamburger = document.querySelector('.hamburger');
 const hamburgerImg = document.querySelector('.hamburger img');
 
@@ -15,8 +15,7 @@ hamburger.addEventListener('click', openNav);
 
 // Functions
 function openNav() {
-	mobileNav.classList.toggle('open');
-	header.classList.toggle('open');
+	navLinks.classList.toggle('open');
 	body.classList.toggle('noscroll');
 	hamburger.classList.toggle('open');
 

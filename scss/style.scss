@@ -60,6 +60,7 @@ a {
 	height: 100vh;
 	background: #bf64cb;
 	transition: all $transition-delay ease;
+	z-index: 3;
 
 	&-finish {
 		opacity: 0;
@@ -114,17 +115,15 @@ header {
 	transition: all $transition-delay;
 	padding-bottom: 12rem;
 
-	&.open {
-		background-color: $black;
-		background-blend-mode: multiply;
-	}
-
 	nav {
 		justify-content: space-between;
 		align-items: center;
 		padding-top: 2rem;
 
 		.logo-container {
+			position: relative;
+			z-index: 1;
+
 			img {
 				width: 80%;
 			}
@@ -135,12 +134,12 @@ header {
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: center;
-			position: absolute;
-			padding: 1rem 0 0 2rem;
-			top: 5rem;
+			position: fixed;
+			padding: 5rem 0 0 2rem;
+			top: 0;
 			left: 0;
 			width: 100%;
-			min-height: 90vh;
+			min-height: 100vh;
 			background: $black;
 			list-style: none;
 			clip-path: circle(100px at 85% -30%);
@@ -157,29 +156,29 @@ header {
 					pointer-events: all;
 
 					&:first-child {
-						animation: mobileNav $transition-delay $transition-delay forwards;
+						animation: mobileNav 700ms $transition-delay forwards;
 					}
 
 					&:nth-child(2) {
-						animation: mobileNav $transition-delay 650ms forwards;
+						animation: mobileNav 700ms 650ms forwards;
 					}
 
 					&:nth-child(3) {
-						animation: mobileNav $transition-delay 800ms forwards;
+						animation: mobileNav 700ms 800ms forwards;
 					}
 
 					&:nth-child(4) {
-						animation: mobileNav $transition-delay 950ms forwards;
+						animation: mobileNav 700ms 950ms forwards;
 					}
 
 					&:last-child {
-						animation: mobileNav $transition-delay 1100ms forwards;
+						animation: mobileNav 700ms 1100ms forwards;
 					}
 				}
 			}
 
 			li {
-				margin-bottom: 3rem;
+				margin-bottom: 2rem;
 				opacity: 0;
 				pointer-events: none;
 
@@ -193,6 +192,8 @@ header {
 		}
 
 		.hamburger {
+			position: relative;
+			z-index: 1;
 			cursor: pointer;
 			transition: all $transition-delay;
 
@@ -269,7 +270,7 @@ main {
 			&:hover,
 			&:focus {
 				h3 {
-					background-color: rgba($color: #f2efe8, $alpha: 0.8);
+					background-color: rgba($color: #f2efe8, $alpha: 0.6);
 					color: $black;
 				}
 			}
