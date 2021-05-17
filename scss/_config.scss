@@ -68,7 +68,7 @@ $soccer-team-mobile: url(../images/mobile/image-soccer-team.jpg);
 }
 
 // Preloader Image
-@keyframes image-opacity {
+@keyframes imageScale {
 	0%,
 	100% {
 		transform: scale(1);
@@ -76,5 +76,16 @@ $soccer-team-mobile: url(../images/mobile/image-soccer-team.jpg);
 
 	50% {
 		transform: scale(1.1);
+	}
+}
+
+// Reduced mobile nav
+@keyframes reducedMobileNav {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
 	}
 }

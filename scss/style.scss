@@ -69,7 +69,7 @@ a {
 	img {
 		width: 20%;
 		transform: scale(1);
-		animation: image-opacity 2s ease-in-out infinite;
+		animation: imageScale 2s ease-in-out infinite;
 	}
 
 	.spinner {
@@ -184,7 +184,6 @@ header {
 				pointer-events: none;
 
 				a {
-					font-family: $font-josefin-sans;
 					font-size: 1.5rem;
 					font-weight: $font-weight-300;
 					color: $white;
@@ -432,7 +431,6 @@ footer {
 				a {
 					color: $white;
 					padding-bottom: 0.4rem;
-					font-family: $font-josefin-sans;
 					font-weight: $font-weight-300;
 
 					&:not(:last-child) {
@@ -471,7 +469,5 @@ footer {
 		}
 	}
 }
-
-// Animations
 
 @import 'media';
