@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/mobile-first-responsive-landing-page-using-css-grid-w-8qjatXm)
+- Live Site URL: [Live Site](https://jhoell-loopstudio-landing-page.netlify.app/)
 
 ## My process
 
